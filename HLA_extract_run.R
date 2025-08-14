@@ -1,4 +1,4 @@
-setwd('/home/rsuseno/HLA_Extractor') 
+setwd('/home/rsuseno/HLAExtractor') 
 
 # ---- DEPENDENCIES ----
 ' if any dependencies are missing, install with
@@ -14,10 +14,10 @@ library(gtools)
 
 
 # Initialization variables ------------------------------------------------
-rawFastqDirectory <- '/home/rsuseno/HLA_Extractor/Input/INDIGO_MHC_01062025' # can be set to raw sequence or extractedFastq directory
+rawFastqDirectory <- '/home/rsuseno/KKJH20/zamvil_samples/'  # can be set to raw sequence or extractedFastq directory
 fastqPattern <- 'fastq' # use '_KIR_' to find already extracted files, otherwise use 'fastq' or whatever fits your data
-threads <- 24
-resultsDirectory <- '/home/rsuseno/HLA_Extractor/Results/INDIGO_MHC_01062025' # Set the master results directory (all pipeline output will be recorded here)
+threads <- 10
+resultsDirectory <- '/home/rsuseno/HLAExtractor/Results/KKJH20_Zamvil' # Set the master results directory (all pipeline output will be recorded here)
 shortNameDelim <- '' # can set a delimiter to shorten sample ID's (ID will be characters before delim)
 minDP <- 10
 
