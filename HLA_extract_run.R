@@ -18,7 +18,7 @@ library(argparser)
 p <- arg_parser("Run HLAExtractor")
 p <- add_argument(p, "--fqDirectory", help='The path to the directory holding your fastq dataThe path to the directory holding your fastq data')
 p <- add_argument(p, "--fastqPattern", help='A string that is shared across all of your fastq file names (used to find fq files and match pairs), this is usually fq or fastq', default = 'fastq')
-p <- add_argument(p, "--threads", help='Number of threads to use during bowtie2 alignments', default = 4)
+p <- add_argument(p, "--threads", help='Number of threads to use during bowtie2 alignments', default = 10)
 p <- add_argument(p, "--resultsDirectory", help='The path to your desired output directory')
 argv <- parse_args(p)
 

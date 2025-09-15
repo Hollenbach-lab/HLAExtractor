@@ -20,8 +20,6 @@ Step 4: Run the R script through Singularity
 singularity exec ping.sif Rscript HLA_extract_run.R
     --fqDirectory <fastq_location>
     --resultsDirectory <output_location>
-    --fastqPattern <fastq_pattern> 
-    --threads <number_of_threads>
 ```
 
 Step 5: Detach from `screen` session by pressing control+A+D
