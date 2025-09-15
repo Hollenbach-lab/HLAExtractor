@@ -1,16 +1,43 @@
 # HLAExtractor
 
-Step 1: Pull Singularity container
+Step 1: Get HLAExtractor code from Github (only need to run once)
+```
+git clone https://github.com/Hollenbach-lab/HLAExtractor.git
+```
+
+Step 2: Pull Singularity container (only need to run once)
 ```
 singularity pull ping.sif library://rsuseno/rsuseno/ping:latest
 ```
 
-Step 2: Edit the following lines in the HLA_extract_run.R file:
-- The very first line, change the content inside `setwd()` to the absolute path pointing to the HLAExtractor folder
-- Update `rawFastqDirectory` variable to the absolute path of the FASTQ you want to extract
-- Update `resultsDirectory` variable to the absolute path of the extraction result
+Step 3: Open a `screen` session
+```
+screen -S yourScreenName
+```
 
-Step 3: Run the R script through Singularity
+Step 4: Run the R script through Singularity
 ```
-singularity exec --bind <your_fastq_location> Rscript HLA_extract_run.R
+singularity exec ping.sif Rscript HLA_extract_run.R
+    --fqDirectory <fastq_location>
+    --resultsDirectory <output_location>
+    --fastqPattern <fastq_pattern> 
+    --threads <number_of_threads>
 ```
+
+Step 5: Detach from `screen` session by pressing control+A+D
+
+Step 6: Check the status of your run by reconnecting to your `screen` session
+```
+screen -r yourScreenName
+```
+
+Step 7: 
+
+If your run has finished, it should say 
+
+`PING2_extractor is complete. Extracted reads are deposited in ...` 
+
+Then you can just type `exit` on the terminal, press enter, and you're good to go.
+
+If your run is still going, do Step 5 again to leave the code running. 
+
